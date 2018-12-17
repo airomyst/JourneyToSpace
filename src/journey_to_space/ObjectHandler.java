@@ -26,9 +26,12 @@ public class ObjectHandler {
         //check for a collision between the shuttle and a rock
         if(isHit){
             if(shuttle.getHP()!=0) {
+                CONSTANTS.state = STATE.WARNING;
                 JOptionPane.showInternalMessageDialog(game.getGameWindow().getContentPane(),
                         "Remaining lives: " + shuttle.getHP(), "", JOptionPane.ERROR_MESSAGE);
+                CONSTANTS.state = STATE.GAME;
             } else {
+                CONSTANTS.state = STATE.WARNING;
                 JOptionPane.showInternalMessageDialog(game.getGameWindow().getContentPane(),
                          "Game over!", "", JOptionPane.ERROR_MESSAGE);
                 CONSTANTS.state = STATE.MENU;
